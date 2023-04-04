@@ -7,7 +7,8 @@ import route5 from "./routers/celeb_route.js";
 const App=express();
 import cors from 'cors';
 import Connect_Db from './connect_db.js'
-
+import errorHandler from "./middlewares/errorHandler.js";
+import notFound from "./middlewares/notFound.js";
 Connect_Db();
 App.use(express.json());
 App.use(cors());
@@ -16,5 +17,7 @@ App.use("/create_Question/11",route2);
 App.use("/create_Question/12",route3);
 App.use("/create_Question/13",route4);
 App.use("/create_Question/14",route5);
+app.use(errorHandler);
+app.use(notFound);
 const port =process.env.PORT;
 App.listen(port,()=>console.log(`server is running on port 1111`));
