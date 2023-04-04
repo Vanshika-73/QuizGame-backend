@@ -16,5 +16,5 @@ App.use("/create_Question/11",route2);
 App.use("/create_Question/12",route3);
 App.use("/create_Question/13",route4);
 App.use("/create_Question/14",route5);
-
-App.listen(1111,()=>console.log(`server is running on port 1111`));
+const port =process.env.PORT;
+App.listen(port,()=>console.log(`server is running on port 1111`));
