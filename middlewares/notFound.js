@@ -1,6 +1,6 @@
 const notFound = (req,res,next) => {
     try {
-        throw new Error (`Not found-${req.path}`)
+        throw new Error (`Not found`)
     } catch (error) {
         next(error);
         
